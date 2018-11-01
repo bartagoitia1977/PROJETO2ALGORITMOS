@@ -15,6 +15,9 @@
 ###############################################################################
 
 class Folha:
+	'''
+	Folha arvore Trie
+	'''
 	def __init__(self):
 		self._objeto = []
 		self._folha = 37*[None]
@@ -43,6 +46,9 @@ class Folha:
 	
 
 class TRIE:
+	'''
+	Arvore Trie
+	'''
 	def __init__(self):
 		self._root = Folha()
 		

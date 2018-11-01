@@ -29,6 +29,11 @@ class Corpus:
 		self._lista_de_referencias = lista_de_referencias
 
 	def VerificarPlagio(self,doc_suspeito,limiar):
+		'''
+		Recebe o nome de arquivo e caminho do arquivo suspeito e um valor de limiar
+		e retorna uma lista com os nomes dos arquivos fontes de provavel plagio em
+		ordem e o valor da contencao.
+		'''
 		self._doc_suspeito = doc_suspeito
 		self._limiar = limiar
 		self._dic_acima_do_limiar = {}
@@ -50,7 +55,9 @@ class Corpus:
 		return self._saida
 		
 	def trocar(self,lista,A,B):
-		
+		'''
+		Trocar bubblesort
+		'''
 		self._lista = lista
 		self._A = A
 		self._B = B
@@ -59,7 +66,9 @@ class Corpus:
 		self._lista[self._B] = self._aux
 
 	def ordenar(self,lista):
-		
+		'''
+		Bubblesort
+		'''
 		self._lista = lista
 		self._tamanho = len(self._lista)
 		for e in range((self._tamanho - 1),0,-1):
@@ -69,6 +78,9 @@ class Corpus:
 		return self._lista
 
 	def contencao(self,doc1,doc2):
+		'''
+		Recebe duas strings continuas de dois documentos e calcula sua contencao.
+		'''
 		self._doc1 = doc1
 		self._doc2 = doc2
 		self._doc_doc1 = Documento(self._doc1)
