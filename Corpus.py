@@ -89,7 +89,7 @@ class Corpus:
 		self._vet_doc2 = self._doc_doc2.gerarNGramas()
 		self._trie_doc2 = TRIE()
 		for ng in self._vet_doc2:
-			self._trie_doc2.inserir(ng,"X")
+			self._trie_doc2.inserir(ng)
 		self._repeticao = 0
 		self._contencao = 0
 		for enegrama in self._vet_doc1:

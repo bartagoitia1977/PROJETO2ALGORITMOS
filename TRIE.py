@@ -19,16 +19,8 @@ class Folha:
 	Folha arvore Trie
 	'''
 	def __init__(self):
-		self._objeto = []
 		self._folha = 37*[None]
 		self._fim_palavra = False
-
-	@property
-	def objeto(self):
-		return self._objeto
-	@objeto.setter
-	def objeto(self,item):
-		self._objeto = item
 
 	@property
 	def folha(self):
@@ -61,9 +53,8 @@ class TRIE:
 		else:
 			return 36
 
-	def inserir(self,chave,objeto):
+	def inserir(self,chave):
 		self._chave = chave
-		self._objeto = objeto
 		self._apontador = self._root
 		self._tamchave = len(self._chave)
 		for cont in range(self._tamchave):
@@ -72,8 +63,7 @@ class TRIE:
 				self._apontador.folha[self._indice] = Folha()
 			self._apontador = self._apontador.folha[self._indice]
 		self._apontador._fim_palavra = True
-		self._apontador.objeto.append(self._objeto)
-			
+					
 	def procurar(self,chave):
 		self._chave = chave
 		self._apontador = self._root
@@ -84,6 +74,6 @@ class TRIE:
 				return False
 			self._apontador = self._apontador.folha[self._indice]
 		if (not(self._apontador) is None) and (self._apontador.fim_palavra):
-			return self._apontador.objeto
+			return True
 		else:
 			return False
